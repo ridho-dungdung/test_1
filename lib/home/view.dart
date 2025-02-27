@@ -12,8 +12,8 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder(
       init: HomeLogic(),
-      builder: (ctr) => Obx(() {
-         const List pages = [
+      builder: (ctr) {
+        const List pages = [
           Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -34,13 +34,14 @@ class HomePage extends StatelessWidget {
           ),
           body: Center(child: pages.elementAt(ctr.bottomNavIndex.value),),
           bottomNavigationBar: BottomNavigationBar(
-              items: const [
-                BottomNavigationBarItem(icon: Icon(Icons.home)),
-                BottomNavigationBarItem(icon: Icon(Icons.history)),
-                BottomNavigationBarItem(icon: Icon(Icons.person)),
+              items: const <BottomNavigationBarItem>[
+                BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+                BottomNavigationBarItem(icon: Icon(Icons.history), label: 'History'),
+                BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
               ],
             currentIndex: ctr.bottomNavIndex.value,
-            onTap: (value) => ctr.selectBottomNavigator(value),
+            selectedItemColor: Colors.blue,
+            onTap: (int value) => ctr.selectBottomNavigator(value),
           ),
           floatingActionButton: FloatingActionButton(
             onPressed: () => ctr.onAdd(),
@@ -48,7 +49,7 @@ class HomePage extends StatelessWidget {
             child: const Icon(Icons.add),
           )
       );
-      }),
+      },
     );
   }
 }

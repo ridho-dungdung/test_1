@@ -17,5 +17,6 @@ class HomeLogic extends GetxController {
 
   void selectBottomNavigator(int selected) {
     bottomNavIndex.value = selected;
+    update();
   }
 }
