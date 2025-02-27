@@ -11,7 +11,8 @@ class ProfilePage extends StatelessWidget {
     return GetBuilder(
         init: ProfileLogic(),
         builder: (ctr) => Container(
-          child: Center(child: Text('Profile'),),
+          child: Center(child: Text('Profile',
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),),
         )
     );
   }

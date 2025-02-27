@@ -19,7 +19,9 @@ class HomePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                  Text(
-                  'You have pushed the button this many times:',
+                  // 'You have pushed the button this many times:',
+                  'Home',
+                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
                 Text("",),
               ],

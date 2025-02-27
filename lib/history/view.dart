@@ -11,7 +11,8 @@ class HistoryPage extends StatelessWidget {
     return GetBuilder(
         init: HistoryLogic(),
         builder: (ctr) => Container(
-          child: Center(child: Text('History'),),
+          child: Center(child: Text('History',
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),),
         )
     );
   }
